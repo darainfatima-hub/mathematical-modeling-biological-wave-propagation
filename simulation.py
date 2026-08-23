@@ -21,7 +21,7 @@ T = 20.0
 num_steps = int(T / dt)
 
 # Initial condition: localized biological activity
-u = np.exp(-((x - 20.0) ** 2) / 4.0)
+u = 1.0 / (1.0 + np.exp((x - 20.0) / 2.0))
 
 # Store selected time snapshots
 snapshots = []
@@ -43,7 +43,7 @@ for n in range(1, num_steps + 1):
     u_new = u + dt * (D * u_xx + r * u * (1 - u))
 
     # Boundary conditions
-    u_new[0] = 0.0
+    u_new[0] = 1.0
     u_new[-1] = 0.0
 
     u = u_new
@@ -75,22 +75,27 @@ plt.show()
 # Estimate wave position and propagation speed
 # -------------------------------------------------
 
+# -------------------------------------------------
+# Estimate traveling-front position and speed
+# -------------------------------------------------
+
 wave_positions = []
 
 for profile in snapshots:
-    # Position of maximum biological activity
-    max_index = np.argmax(profile)
-    wave_positions.append(x[max_index])
+    # Find the position where u is closest to 0.5
+    front_index = np.argmin(np.abs(profile - 0.5))
+    wave_positions.append(x[front_index])
 
 wave_positions = np.array(wave_positions)
-
-# Calculate propagation speed using linear regression
 time_array = np.array(snapshot_times)
 
+# Estimate propagation speed
 speed, intercept = np.polyfit(time_array, wave_positions, 1)
 
-print("\nWave positions:")
+print("\nTraveling-front positions:")
 for time, position in zip(time_array, wave_positions):
-    print(f"t = {time:.1f}, position = {position:.2f}")
+    print(f"t = {time:.1f}, front position = {position:.2f}")
 
-print(f"\nEstimated propagation speed = {speed:.4f} spatial units per time unit")
+print(
+    f"\nEstimated propagation speed = "
+    f"{speed:.4f} spatial units per time unit")
