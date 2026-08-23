@@ -20,7 +20,7 @@ dt = 0.01
 T = 20.0
 num_steps = int(T / dt)
 
-# Initial condition: localized biological activity
+# Initial condition: sigmoid traveling-front profile
 u = 1.0 / (1.0 + np.exp((x - 20.0) / 2.0))
 
 # Store selected time snapshots
@@ -69,11 +69,8 @@ plt.legend()
 plt.grid(True)
 
 plt.tight_layout()
-plt.savefig("wave_propagation.png", dpi=300)
+plt.savefig("travelling_wave.png", dpi=300)
 plt.show()
-# -------------------------------------------------
-# Estimate wave position and propagation speed
-# -------------------------------------------------
 
 # -------------------------------------------------
 # Estimate traveling-front position and speed
@@ -98,4 +95,5 @@ for time, position in zip(time_array, wave_positions):
 
 print(
     f"\nEstimated propagation speed = "
-    f"{speed:.4f} spatial units per time unit")
+    f"{speed:.4f} spatial units per time unit"
+)
