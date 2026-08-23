@@ -137,3 +137,14 @@ A sigmoid traveling-front profile was therefore considered for the subsequent an
 The parameter analysis further showed that diffusion has a significant influence on the simulated propagation speed. Increasing the diffusion coefficient from $D = 0.5$ to $D = 2.0$ increased the estimated propagation speed from $2.2291$ to $2.9000$ spatial units per time unit. This behavior is consistent with the role of diffusion in transporting activity through the spatial domain.
 
 The results demonstrate how nonlinear reaction-diffusion equations can be used as computational tools for studying propagation phenomena in biological systems. However, the present model is a simplified one-dimensional representation and does not capture the full complexity of real biological systems. More realistic models could incorporate additional variables, spatial dimensions, heterogeneous parameters, and experimentally measured biological data.
+## 11. Conclusion
+
+This project investigated the mathematical modeling of biological wave propagation using the Fisher-KPP nonlinear reaction-diffusion equation.
+
+A preliminary Gaussian-profile simulation was first examined. Since the maximum of the solution remained approximately fixed in space, its peak-based propagation speed was estimated as zero. This motivated the use of a sigmoid traveling-front profile for the subsequent analysis.
+
+The traveling-front simulation demonstrated clear spatial propagation, with the front position increasing from $x = 20.00$ at $t = 0$ to $x = 68.80$ at $t = 20$. The estimated propagation speed was $2.4564$ spatial units per time unit.
+
+Parameter analysis showed that increasing the diffusion coefficient resulted in increased propagation speed. The estimated speeds were $2.2291$, $2.4564$, and $2.9000$ for $D = 0.5$, $1.0$, and $2.0$, respectively.
+
+Overall, the project demonstrates how nonlinear partial differential equations, numerical methods, and computational analysis can be combined to investigate wave propagation phenomena in biological systems. The model provides a simplified mathematical framework that can be further extended toward more realistic biological applications.
