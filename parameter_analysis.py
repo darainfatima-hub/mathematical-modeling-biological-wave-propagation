@@ -21,7 +21,7 @@ dt = 0.01
 T = 20.0
 num_steps = int(T / dt)
 
-# Store calculated propagation speeds
+# Store calculated propagation speeds for each diffusion coefficient
 results = []
 
 for D in D_values:
