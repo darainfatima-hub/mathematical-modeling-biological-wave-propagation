@@ -170,8 +170,9 @@ The repository contains the following main files:
 
 1. Fisher, R. A. (1937). The wave of advance of advantageous genes. *Annals of Eugenics*, 7(4), 355–369.
 2. Kolmogorov, A., Petrovskii, I., & Piskunov, N. (1937). Étude de l'équation de la diffusion avec croissance de la quantité de matière et son application à un problème biologique. *Bulletin de l'Université d'État de Moscou, Série Internationale A*, 1, 1–25.
-3. Murray, J. D. (2002). Dynamics of infectious diseases: Epidemic models and AIDS. *In Mathematical biology: I. An introduction* (pp. 315-394). New York: Springer New York.
-4. Murray, J. D. (2003). Spatial models and biomedical applications. *Mathematical Biology*.
+3. Murray, J. D. (2002). *Mathematical Biology I: An Introduction* (3rd ed.). Springer. https://doi.org/10.1007/b98868
+
+4. Murray, J. D. (2003). *Mathematical Biology II: Spatial Models and Biomedical Applications* (3rd ed.). Springer. https://doi.org/10.1007/b98869
 
 ## 15. Future Work
 
