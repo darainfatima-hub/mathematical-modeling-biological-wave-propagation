@@ -37,7 +37,7 @@ where:
 
 The diffusion term describes the spatial spreading of the biological signal, while the nonlinear reaction term represents local changes in biological activity.
 
-### 5. Model Assumptions
+## 5. Model Assumptions
 
 The model assumes that:
 
@@ -59,7 +59,7 @@ This preliminary result motivated the use of a sigmoid traveling-front profile f
 
 ## 7. Final Traveling-Wave Results
 
-A sigmoid traveling-front profile was used to investigate the propagation of biological activity through the spatial domain. The wave front was tracked by identifying the position at which the solution satisfies u = 0.5 at each selected time point.
+A sigmoid traveling-front profile was used to investigate the propagation of biological activity through the spatial domain. The wave front was tracked by identifying the position at which the solution satisfies $u = 0.5$ at each selected time point.
 
 The numerical simulation showed a clear forward movement of the traveling front. The front position increased from x = 20.00 at t = 0 to x = 68.80 at t = 20.
 
@@ -102,7 +102,7 @@ The simulated front positions were:
 | 18 | 63.80 |
 | 20 | 68.80 |
 
-A linear fit of front position against time gives an estimated propagation speed of:
+A linear fit of front position against time gave an estimated propagation speed of:
 
 $$
 c \approx 2.4564 
