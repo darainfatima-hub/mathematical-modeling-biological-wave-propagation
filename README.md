@@ -167,3 +167,25 @@ The repository contains the following main files:
 - `travelling_wave.png` — final traveling-front simulation
 - `diffusion_parameter_analysis.png` — diffusion coefficient versus propagation speed
 - `README.md` — mathematical model, methodology, results, discussion, and conclusions
+## 14. References
+
+1. Fisher, R. A. (1937). The wave of advance of advantageous genes. *Annals of Eugenics*, 7(4), 355–369.
+2. Kolmogorov, A., Petrovskii, I., & Piskunov, N. (1937). Étude de l'équation de la diffusion avec croissance de la quantité de matière et son application à un problème biologique. *Bulletin de l'Université d'État de Moscou, Série Internationale A*, 1, 1–25.
+3. Murray, J. D. (2002). Dynamics of infectious diseases: Epidemic models and AIDS. *In Mathematical biology: I. An introduction* (pp. 315-394). New York: Springer New York.
+4. Murray, J. D. (2003). Spatial models and biomedical applications. *Mathematical Biology*.
+
+## 15. Future Work
+
+The present study provides a simplified one-dimensional framework for investigating biological wave propagation. Several extensions can be considered for future research:
+
+1. **Higher-dimensional modeling:** Extend the one-dimensional reaction-diffusion model to two- and three-dimensional spatial domains.
+
+2. **Parameter sensitivity analysis:** Investigate the sensitivity of wave speed and wave structure to the diffusion coefficient, reaction parameter, and other model parameters.
+
+3. **Heterogeneous biological media:** Introduce spatially varying diffusion and reaction parameters to represent heterogeneous biological environments.
+
+4. **Comparison with biological data:** Compare numerical wave profiles with experimentally measured biological or neural signals where suitable datasets are available.
+
+5. **More complex biological models:** Extend the framework toward coupled reaction-diffusion systems and more realistic models of biological signal propagation.
+
+6. **Application to neural wave propagation:** Explore whether reaction-diffusion and traveling-wave models can be adapted to investigate wave-like activity in neural systems.
