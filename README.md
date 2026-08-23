@@ -37,7 +37,7 @@ where:
 
 The diffusion term describes the spatial spreading of the biological signal, while the nonlinear reaction term represents local changes in biological activity.
 
-### Model Assumptions
+### 5. Model Assumptions
 
 The model assumes that:
 
@@ -46,7 +46,7 @@ The model assumes that:
 3. Local biological dynamics are represented by a nonlinear reaction term.
 4. The model parameters are constant during the simulation.
 
-## 6. ## Preliminary Results
+## 6. Preliminary Results
 
 An initial Gaussian-profile simulation was performed as a preliminary test of biological wave propagation. The solution remained centered around x = 20 throughout the simulated time interval.
 
@@ -57,8 +57,7 @@ This preliminary result motivated the use of a sigmoid traveling-front profile f
 
 **Figure 1.** Preliminary Gaussian-profile simulation at different time points.
 
-## Final Traveling-Wave Results
-## Final Traveling-Wave Results
+## 7. Final Traveling-Wave Results
 
 A sigmoid traveling-front profile was used to investigate the propagation of biological activity through the spatial domain. The wave front was tracked by identifying the position at which the solution satisfies u = 0.5 at each selected time point.
 
@@ -76,14 +75,14 @@ These results demonstrate the propagation of the modeled traveling front and pro
 
 ### Traveling-Front Simulation
 
-![Final traveling-wave simulation](wave_prpagation.png)
+![Final traveling-wave simulation](travelling_wave.png)
 
 **Figure 2.** Numerical simulation of the sigmoid traveling front at different time points.
 
 
 
 
-### Quantitative Analysis of Wave Propagation
+### Quantitative Analysis of Traveling Wave Simulation
 
 The position of the traveling wave front was estimated by tracking the spatial location where the solution satisfies $u = 0.5$.
 
@@ -106,9 +105,7 @@ The simulated front positions were:
 A linear fit of front position against time gives an estimated propagation speed of:
 
 $$
-c \approx 2.4564
+c \approx 2.4564 spatial units per time unit.
 $$
-
-spatial units per time unit.
 
 The increasing front position demonstrates that the modeled biological activity propagates through the spatial domain over time.
