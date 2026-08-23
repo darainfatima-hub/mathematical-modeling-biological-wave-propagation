@@ -82,7 +82,7 @@ These results demonstrate the propagation of the modeled traveling front and pro
 
 
 
-### Quantitative Analysis of Traveling Wave Simulation
+## 8. Quantitative Analysis of Traveling Wave Simulation
 
 The position of the traveling wave front was estimated by tracking the spatial location where the solution satisfies $u = 0.5$.
 
