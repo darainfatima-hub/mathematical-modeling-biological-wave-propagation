@@ -126,7 +126,6 @@ The results show that the propagation speed increases as the diffusion coefficie
 ### Effect of Diffusion on Propagation Speed
 
 ![Effect of diffusion coefficient on wave propagation](diffusion_parameter_analysis.png)
-
 **Figure 3.** Relationship between the diffusion coefficient and the estimated propagation speed.
 ## 10. Discussion
 
