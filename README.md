@@ -54,7 +54,7 @@ The simulated wave exhibits a broad, plateau-like profile that evolves and propa
 
 ### Wave Propagation
 
-![Numerical simulation of biological wave propagation](wave_propagation.png)
+![Numerical simulation of biological wave propagation](initial_gaussian_simulation.png)
 
 **Figure 1.** Numerical simulation showing the propagation of the biological wave profile at different time points.
 ### Quantitative Analysis of Wave Propagation
