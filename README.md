@@ -109,3 +109,22 @@ c = 2.4564
 $$
 spatial units per time unit.
 The increasing front position demonstrates that the modeled biological activity propagates through the spatial domain over time.
+## 9. Parameter Analysis
+
+To investigate how diffusion influences biological wave propagation, simulations were performed using three different values of the diffusion coefficient $D$, while keeping the reaction parameter fixed at $r = 1.0$.
+
+The estimated propagation speeds were:
+
+| Diffusion Coefficient $D$ | Propagation Speed |
+|----------------------------|-------------------|
+| 0.5 | 2.2291 |
+| 1.0 | 2.4564 |
+| 2.0 | 2.9000 |
+
+The results show that the propagation speed increases as the diffusion coefficient increases. In the simulated system, stronger diffusion leads to faster spatial propagation of the traveling front.
+
+### Effect of Diffusion on Propagation Speed
+
+![Effect of diffusion coefficient on wave propagation](diffusion_parameter_analysis.png)
+
+**Figure 3.** Relationship between the diffusion coefficient and the estimated propagation speed.
