@@ -57,3 +57,32 @@ The simulated wave exhibits a broad, plateau-like profile that evolves and propa
 ![Numerical simulation of biological wave propagation](wave_propagation.png)
 
 **Figure 1.** Numerical simulation showing the propagation of the biological wave profile at different time points.
+### Quantitative Analysis of Wave Propagation
+
+The position of the traveling wave front was estimated by tracking the spatial location where the solution satisfies $u = 0.5$.
+
+The simulated front positions were:
+
+| Time | Front Position |
+|------|----------------|
+| 0 | 20.00 |
+| 2 | 24.40 |
+| 4 | 29.20 |
+| 6 | 34.00 |
+| 8 | 39.00 |
+| 10 | 44.00 |
+| 12 | 49.00 |
+| 14 | 54.00 |
+| 16 | 58.80 |
+| 18 | 63.80 |
+| 20 | 68.80 |
+
+A linear fit of front position against time gives an estimated propagation speed of:
+
+$$
+c \approx 2.4564
+$$
+
+spatial units per time unit.
+
+The increasing front position demonstrates that the modeled biological activity propagates through the spatial domain over time.
