@@ -104,8 +104,8 @@ The simulated front positions were:
 
 A linear fit of front position against time gave an estimated propagation speed of:
 
-$
+$$
 c \approx 2.4564 
-$
+$$
 spatial units per time unit.
 The increasing front position demonstrates that the modeled biological activity propagates through the spatial domain over time.
