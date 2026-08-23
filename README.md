@@ -148,3 +148,22 @@ The traveling-front simulation demonstrated clear spatial propagation, with the 
 Parameter analysis showed that increasing the diffusion coefficient resulted in increased propagation speed. The estimated speeds were $2.2291$, $2.4564$, and $2.9000$ for $D = 0.5$, $1.0$, and $2.0$, respectively.
 
 Overall, the project demonstrates how nonlinear partial differential equations, numerical methods, and computational analysis can be combined to investigate wave propagation phenomena in biological systems. The model provides a simplified mathematical framework that can be further extended toward more realistic biological applications.
+## 12. Tools and Technologies
+
+The project was developed using the following computational tools:
+
+- **Python** — numerical simulation and computational analysis
+- **NumPy** — numerical calculations and array-based computation
+- **Matplotlib** — visualization of wave profiles and parameter-analysis results
+- **GitHub** — project documentation, version control, and reproducibility
+
+## 13. Project Structure
+
+The repository contains the following main files:
+
+- `simulation.py` — numerical simulation of the Fisher-KPP traveling-wave model
+- `parameter_analysis.py` — analysis of the effect of the diffusion coefficient on propagation speed
+- `initial_gaussian_simulation.png` — preliminary Gaussian-profile simulation
+- `travelling_wave.png` — final traveling-front simulation
+- `diffusion_parameter_analysis.png` — diffusion coefficient versus propagation speed
+- `README.md` — mathematical model, methodology, results, discussion, and conclusions
