@@ -45,3 +45,15 @@ The model assumes that:
 2. Spatial propagation can be represented by a diffusion process.
 3. Local biological dynamics are represented by a nonlinear reaction term.
 4. The model parameters are constant during the simulation.
+
+## 6. Results
+
+The numerical simulation demonstrates the propagation of a localized biological activity profile over time. The solution profiles at different time points show a clear spatial shift of the wave, indicating traveling-wave behavior.
+
+The simulated wave exhibits a broad, plateau-like profile that evolves and propagates through the spatial domain as time increases.
+
+### Wave Propagation
+
+![Numerical simulation of biological wave propagation](wave_propagation.png)
+
+**Figure 1.** Numerical simulation showing the propagation of the biological wave profile at different time points.
