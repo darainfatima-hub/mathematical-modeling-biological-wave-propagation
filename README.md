@@ -46,17 +46,43 @@ The model assumes that:
 3. Local biological dynamics are represented by a nonlinear reaction term.
 4. The model parameters are constant during the simulation.
 
-## 6. Results
+## 6. ## Preliminary Results
 
-The numerical simulation demonstrates the propagation of a localized biological activity profile over time. The solution profiles at different time points show a clear spatial shift of the wave, indicating traveling-wave behavior.
+An initial Gaussian-profile simulation was performed as a preliminary test of biological wave propagation. The solution remained centered around x = 20 throughout the simulated time interval.
 
-The simulated wave exhibits a broad, plateau-like profile that evolves and propagates through the spatial domain as time increases.
+The peak-position analysis gave an estimated propagation speed of 0.0000 spatial units per time unit. This indicated that the Gaussian pulse did not exhibit translational motion of its maximum and therefore was not suitable for estimating traveling-wave speed using the peak-position method.
 
-### Wave Propagation
+This preliminary result motivated the use of a sigmoid traveling-front profile for the subsequent propagation analysis.
+![Initial Gaussian simulation](initial_gaussian_simulation.png)
 
-![Numerical simulation of biological wave propagation](initial_gaussian_simulation.png)
+**Figure 1.** Preliminary Gaussian-profile simulation at different time points.
 
-**Figure 1.** Numerical simulation showing the propagation of the biological wave profile at different time points.
+## Final Traveling-Wave Results
+## Final Traveling-Wave Results
+
+A sigmoid traveling-front profile was used to investigate the propagation of biological activity through the spatial domain. The wave front was tracked by identifying the position at which the solution satisfies u = 0.5 at each selected time point.
+
+The numerical simulation showed a clear forward movement of the traveling front. The front position increased from x = 20.00 at t = 0 to x = 68.80 at t = 20.
+
+A linear fit of the front position as a function of time gave an estimated propagation speed of:
+
+$$
+c = 2.4564
+$$
+
+spatial units per time unit.
+
+These results demonstrate the propagation of the modeled traveling front and provide a quantitative estimate of its propagation speed.
+
+### Traveling-Front Simulation
+
+![Final traveling-wave simulation](wave_prpagation.png)
+
+**Figure 2.** Numerical simulation of the sigmoid traveling front at different time points.
+
+
+
+
 ### Quantitative Analysis of Wave Propagation
 
 The position of the traveling wave front was estimated by tracking the spatial location where the solution satisfies $u = 0.5$.
