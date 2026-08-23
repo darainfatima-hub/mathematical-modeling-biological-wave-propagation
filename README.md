@@ -19,3 +19,34 @@ The main objectives of this project are:
 3. To visualize the propagation of biological waves.
 4. To investigate the influence of model parameters on wave behavior.
 5. To discuss the potential relevance of reaction-diffusion models to biological systems.
+
+## 4. Mathematical Model
+
+To investigate biological wave propagation, this project considers the Fisher-KPP reaction-diffusion equation:
+
+$$
+\frac{\partial u}{\partial t}
+=
+D\frac{\partial^2 u}{\partial x^2}
++
+ru(1-u)
+$$
+
+where:
+
+- $u(x,t)$ represents the normalized biological activity or signal.
+- $D$ is the diffusion coefficient.
+- $r$ is the reaction or growth parameter.
+- $x$ represents the spatial coordinate.
+- $t$ represents time.
+
+The diffusion term describes the spatial spreading of the biological signal, while the nonlinear reaction term represents local changes in biological activity.
+
+### Model Assumptions
+
+The model assumes that:
+
+1. The biological activity varies continuously in space and time.
+2. Spatial propagation can be represented by a diffusion process.
+3. Local biological dynamics are represented by a nonlinear reaction term.
+4. The model parameters are constant during the simulation.
