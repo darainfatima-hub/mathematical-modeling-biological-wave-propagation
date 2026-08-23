@@ -25,12 +25,7 @@ The main objectives of this project are:
 To investigate biological wave propagation, this project considers the Fisher-KPP reaction-diffusion equation:
 
 $$
-\frac{\partial u}{\partial t}
-=
-D\frac{\partial^2 u}{\partial x^2}
-+
-ru(1-u)
-$$
+\frac{\partial u}{\partial t} = D\frac{\partial^2 u}{\partial x^2}+ ru(1-u)$$
 
 where:
 
