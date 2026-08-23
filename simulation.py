@@ -71,3 +71,26 @@ plt.grid(True)
 plt.tight_layout()
 plt.savefig("wave_propagation.png", dpi=300)
 plt.show()
+# -------------------------------------------------
+# Estimate wave position and propagation speed
+# -------------------------------------------------
+
+wave_positions = []
+
+for profile in snapshots:
+    # Position of maximum biological activity
+    max_index = np.argmax(profile)
+    wave_positions.append(x[max_index])
+
+wave_positions = np.array(wave_positions)
+
+# Calculate propagation speed using linear regression
+time_array = np.array(snapshot_times)
+
+speed, intercept = np.polyfit(time_array, wave_positions, 1)
+
+print("\nWave positions:")
+for time, position in zip(time_array, wave_positions):
+    print(f"t = {time:.1f}, position = {position:.2f}")
+
+print(f"\nEstimated propagation speed = {speed:.4f} spatial units per time unit")
