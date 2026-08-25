@@ -1,42 +1,108 @@
-# Mathematical Analysis of EEG Brain-Wave Activity
+# Mathematical Modeling and Analysis of Biological Waves
 
-## Project Overview
+## Overview
 
-This project investigates frequency characteristics of real electroencephalography (EEG) signals using mathematical and computational methods.
+This repository contains two interconnected computational projects developed around mathematical modeling, numerical simulation, and analysis of biological wave phenomena.
 
-The analysis combines a mathematical background with Python-based signal processing to study the distribution of EEG frequency components, with particular attention to the theta band (4–8 Hz).
+The first part focuses on mathematical modeling of biological wave propagation using the Fisher-KPP reaction-diffusion equation.
 
-Real EEG data from the PhysioNet EEG Motor Movement/Imagery Dataset were used for the analysis.
+The second part extends the computational work toward real biological signals by analyzing EEG brain-wave activity using mathematical and signal-processing techniques.
 
----
+Together, the projects demonstrate an interdisciplinary connection between:
 
-## Research Objective
-
-The main objective of this project is to analyze the spectral characteristics of EEG signals and quantify the contribution of different frequency bands.
-
-The project focuses on:
-
-- EEG signal preprocessing
-- Frequency-domain analysis
-- Power spectral density
-- Delta, theta, alpha, and beta band power
-- Relative frequency-band power
-- Time-frequency analysis
-- Multi-channel theta comparison
-- Statistical and mathematical analysis of EEG features
+**Applied Mathematics + Numerical Methods + Python + Biological Modeling + EEG Signal Processing + Neuroscience**
 
 ---
 
-## Dataset
+# Project 1 — Mathematical Modeling of Biological Wave Propagation
 
-The EEG recordings were obtained from the PhysioNet EEG Motor Movement/Imagery Dataset.
+## Overview
 
-Each recording contains:
+This project investigates the propagation of biological waves using mathematical modeling and numerical simulation.
 
-- 64 EEG channels
-- Sampling frequency of 160 Hz
-- EEG recordings in EDF+ format
-- Event annotations
+The Fisher-KPP reaction-diffusion equation is used as a mathematical framework for studying the evolution and propagation of a biological activity profile.
+
+The model is based on the reaction-diffusion equation:
+
+$$
+u_t = D u_{xx} + r u(1-u)
+$$
+
+where:
+
+- $u(x,t)$ represents biological activity
+- $D$ is the diffusion coefficient
+- $r$ is the reaction rate
+- $x$ represents spatial position
+- $t$ represents time
+
+---
+
+## Numerical Simulation
+
+The Fisher-KPP equation was solved numerically using an explicit finite-difference scheme.
+
+The simulation investigates how an initially localized biological activity profile propagates through space over time.
+
+### Main Python script
+
+`simulation.py`
+
+### Travelling-wave simulation
+
+![Travelling Wave](travelling_wave.png)
+
+---
+
+## Diffusion Parameter Analysis
+
+Different diffusion coefficients were investigated to examine their influence on propagation speed.
+
+The investigated values were:
+
+- $D = 0.5$
+- $D = 1.0$
+- $D = 2.0$
+
+### Parameter analysis
+
+`parameter_analysis.py`
+
+![Diffusion Parameter Analysis](diffusion_parameter_analysis.png)
+
+---
+
+## Initial Gaussian Simulation
+
+An additional numerical simulation was performed using a localized initial profile.
+
+![Initial Gaussian Simulation](initial_gaussian_simulation.png)
+
+---
+
+## Mathematical Results
+
+The position of the traveling front was estimated using the point where:
+
+$$
+u(x,t) \approx 0.5
+$$
+
+The propagation speed was then estimated using linear regression of front position against time.
+
+The analysis demonstrates how numerical methods can be used to investigate wave propagation in reaction-diffusion systems.
+
+---
+
+# Project 2 — Mathematical Analysis of EEG Brain-Wave Activity
+
+## Overview
+
+The second project applies mathematical and computational methods to real EEG data.
+
+The objective is to analyze the frequency characteristics of EEG signals and quantify the contribution of different frequency bands, with particular attention to the theta band.
+
+Real EEG data were obtained from the PhysioNet EEG Motor Movement/Imagery Dataset.
 
 Dataset:
 
@@ -44,39 +110,39 @@ https://physionet.org/content/eegmmidb/1.0.0/
 
 ---
 
-## Tools and Technologies
+## Dataset
 
-The project was developed using:
+The EEG recording used in this analysis contains:
 
-- Python
-- NumPy
-- Matplotlib
-- MNE-Python
-- Fast Fourier Transform (FFT)
-- Welch Power Spectral Density estimation
-- Statistical analysis
+- 64 EEG channels
+- Sampling frequency of 160 Hz
+- EDF+ format
+- Event annotations
+
+The analysis was initially performed using the `S001R01.edf` recording.
 
 ---
 
-## Methodology
+## EEG Analysis Pipeline
 
-### 1. EEG Data Loading
+The analysis consists of:
 
-The EEG recording was loaded using MNE-Python.
+1. Loading the EEG signal
+2. Selecting EEG channels
+3. Signal filtering
+4. Frequency-domain analysis
+5. Power spectral density analysis
+6. EEG frequency-band analysis
+7. Relative band-power calculation
+8. Time-frequency analysis
+9. Multi-channel theta analysis
+10. Mathematical statistical analysis
 
-The C3 EEG channel was selected for detailed analysis.
+---
 
-### 2. Signal Filtering
+## EEG Frequency Bands
 
-A 1–40 Hz band-pass filter was applied to reduce very-low-frequency drift and high-frequency noise.
-
-### 3. Frequency-Domain Analysis
-
-Fast Fourier Transform (FFT) was used to investigate the frequency components of the EEG signal.
-
-### 4. EEG Band-Power Analysis
-
-Power was calculated for four conventional frequency bands:
+Four conventional EEG frequency bands were investigated:
 
 | Band | Frequency Range |
 |---|---|
@@ -85,39 +151,13 @@ Power was calculated for four conventional frequency bands:
 | Alpha | 8–13 Hz |
 | Beta | 13–30 Hz |
 
-### 5. Relative Band Power
-
-Relative power was calculated as:
-
-Relative Power = Band Power / Total Power × 100
-
-This allowed comparison of the contribution of each frequency band.
-
-### 6. Time-Frequency Analysis
-
-A spectrogram was generated to examine how the frequency content of the EEG signal changes over time.
-
-### 7. Multi-Channel Analysis
-
-Theta-band relative power was compared across five EEG channels:
-
-- C3
-- C4
-- Fz
-- Pz
-- Oz
-
-### 8. Mathematical Analysis
-
-Mean, standard deviation, range, and coefficient of variation were calculated to quantify the spatial variation of theta-band activity.
-
 ---
 
-## Results
+## C3 EEG Band-Power Analysis
 
-### C3 Frequency-Band Analysis
+The C3 channel was selected for detailed frequency-band analysis.
 
-The relative power obtained from the C3 channel was:
+### Relative Power
 
 | Frequency Band | Relative Power |
 |---|---:|
@@ -126,11 +166,23 @@ The relative power obtained from the C3 channel was:
 | Alpha | 13.66% |
 | Beta | 13.50% |
 
-The theta band accounted for **20.59%** of the combined power of the analyzed frequency bands in the C3 channel.
+![C3 Relative Band Power](C3_relative_band_power.png)
 
-### Multi-Channel Theta Analysis
+---
 
-| EEG Channel | Theta Relative Power |
+## Time-Frequency Analysis
+
+A spectrogram was generated to investigate changes in EEG frequency content over time.
+
+![C3 EEG Spectrogram](C3_EEG_spectrogram.png)
+
+---
+
+## Multi-Channel Theta Analysis
+
+Theta relative power was compared across five selected EEG channels.
+
+| Channel | Theta Relative Power |
 |---|---:|
 | C3 | 20.59% |
 | C4 | 18.66% |
@@ -138,11 +190,15 @@ The theta band accounted for **20.59%** of the combined power of the analyzed fr
 | Pz | 16.74% |
 | Oz | 14.82% |
 
-Theta relative power ranged from **14.82% to 20.59%** across the five analyzed channels.
+![Theta Comparison](final_theta_comparison.png)
 
-### Mathematical Results
+---
 
-| Measure | Value |
+## Mathematical Analysis of Theta Activity
+
+The following statistical measures were calculated:
+
+| Measure | Result |
 |---|---:|
 | Mean theta power | 18.19% |
 | Standard deviation | 2.41% |
@@ -151,77 +207,96 @@ Theta relative power ranged from **14.82% to 20.59%** across the five analyzed c
 | Range | 5.77% |
 | Coefficient of variation | 13.23% |
 
-C3 showed the highest observed theta relative power, while Oz showed the lowest among the five selected channels.
+The highest observed theta relative power was found at C3 (20.59%), while the lowest was observed at Oz (14.82%).
 
 ---
 
-## Figures
+# Python Implementation
 
-### Relative EEG Band Power
+The main Python scripts are:
 
-`C3_relative_band_power.png`
+### Biological Wave Modeling
 
-### Time-Frequency Analysis
+- `simulation.py`
+- `parameter_analysis.py`
 
-`C3_EEG_spectrogram.png`
+### EEG Analysis
 
-### Multi-Channel Theta Comparison
-
-`final_theta_comparison.png`
-
----
-
-## Interpretation
-
-The analysis demonstrates that EEG signals contain measurable contributions from multiple frequency bands.
-
-The theta-band contribution varied across the selected EEG channels, with the highest observed value at C3 and the lowest at Oz.
-
-The calculated mean and standard deviation provide a simple mathematical description of the variation in theta-band relative power across the selected electrode locations.
-
-These findings demonstrate how mathematical and computational methods can be applied to extract quantitative features from biological signals.
+- `eeg_analysis.py`
+- `final_results.py`
+- `mathematical_analysis.py`
 
 ---
 
-## Limitations
+# Technologies Used
 
-This project is an exploratory analysis based on a single EEG recording and five selected channels.
-
-Therefore, the results should not be interpreted as clinical findings or generalized to a wider population.
-
-Further analysis using multiple subjects, multiple recordings, and task-specific event segments would be required for broader conclusions.
-
----
-
-## Future Work
-
-Possible extensions include:
-
-- Analysis of multiple subjects
-- Automated EEG artifact removal
-- Comparison of resting and motor-imagery periods
-- Analysis of additional EEG channels
-- Statistical comparison between experimental conditions
-- Machine-learning-based EEG classification
-- Mathematical modeling of brain-wave propagation
-- Comparison of experimental EEG characteristics with mathematical models
+- Python
+- NumPy
+- Matplotlib
+- MNE-Python
+- Numerical finite-difference methods
+- Fast Fourier Transform (FFT)
+- Power spectral density analysis
+- Statistical analysis
+- Reaction-diffusion modeling
 
 ---
 
-## Project Significance
+# Scientific Significance
 
-This project demonstrates the application of mathematical analysis, numerical methods, and Python-based computational tools to real biological data.
+These projects demonstrate the use of mathematical and computational techniques for studying biological phenomena.
 
-It provides an interdisciplinary connection between:
+The work connects mathematical modeling with real biological data through two complementary approaches:
 
-**Mathematics + Computer Science + Neuroscience + Biological Signal Processing**
+**Mathematical model → Biological wave propagation**
+
+and
+
+**Real EEG data → Mathematical signal analysis**
+
+This provides an interdisciplinary framework connecting:
+
+**Applied Mathematics + Computer Science + Physics + Biology + Neuroscience**
 
 ---
 
-## Author
+# Limitations
 
-Darain Fatima
+The EEG analysis presented here is exploratory and is based on a limited number of selected channels and recordings.
+
+The results should not be interpreted as clinical findings.
+
+Further work using multiple subjects, multiple experimental conditions, and larger datasets would provide a stronger basis for statistical conclusions.
+
+---
+
+# Future Work
+
+Future extensions may include:
+
+- Analysis of multiple EEG subjects
+- Event-based EEG segmentation
+- Comparison of motor-imagery conditions
+- Automated artifact removal
+- Machine-learning classification
+- Mathematical modeling of EEG wave propagation
+- Comparison between theoretical biological-wave models and experimental EEG signals
+- Development of more advanced mathematical models for biological systems
+
+---
+
+# Author
+
+**Darain Fatima**
 
 MPhil Mathematics — Applied Mathematics
 
-Research interests include nonlinear partial differential equations, mathematical modeling, symmetry analysis, and computational approaches to biological systems.
+Research interests include:
+
+- Nonlinear partial differential equations
+- Mathematical modeling
+- Symmetry analysis
+- Reaction-diffusion equations
+- Biological wave propagation
+- EEG signal analysis
+- Computational mathematics
