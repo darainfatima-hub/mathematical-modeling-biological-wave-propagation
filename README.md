@@ -343,18 +343,6 @@ Several extensions can be developed from the present analysis:
 
 The current analysis is exploratory and uses a limited selection of channels and recordings. The results should not be interpreted as clinical findings.
 
-## Future Work
-
-Future development may include:
-
-- analysis of multiple EEG subjects
-- event-based EEG segmentation
-- comparison of motor-imagery conditions
-- automated artifact removal
-- machine-learning classification
-- mathematical modeling of EEG wave propagation
-- comparison between theoretical biological-wave models and experimental EEG signals
-
 ## Dataset Source
 
 PhysioNet — EEG Motor Movement/Imagery Dataset
