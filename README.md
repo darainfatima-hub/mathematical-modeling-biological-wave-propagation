@@ -186,3 +186,135 @@ The present study provides a simplified one-dimensional framework for investigat
 5. **More complex biological models:** Extend the framework toward coupled reaction-diffusion systems and more realistic models of biological signal propagation.
 
 6. **Application to neural wave propagation:** Explore whether reaction-diffusion and traveling-wave models can be adapted to investigate wave-like activity in neural systems.
+
+
+---
+
+# Project 2 — EEG Brain-Wave Analysis
+
+## Overview
+
+This project extends the mathematical modeling work toward real biological signals through quantitative analysis of electroencephalography (EEG) data.
+
+The objective is to investigate the frequency characteristics of EEG signals and quantify theta-band activity across different brain regions using mathematical and computational methods.
+
+## Dataset
+
+The EEG data were obtained from the PhysioNet EEG Motor Movement/Imagery Dataset.
+
+The recording contains 64 EEG channels sampled at 160 Hz.
+
+## Methodology
+
+The analysis includes:
+
+1. EEG signal loading
+2. Signal preprocessing
+3. Frequency-domain analysis
+4. Power spectral density analysis
+5. EEG band-power calculation
+6. Relative theta-power analysis
+7. Multi-channel comparison
+8. Statistical analysis
+9. Time-frequency analysis
+
+## EEG Frequency Bands
+
+| Band | Frequency |
+|---|---|
+| Delta | 1–4 Hz |
+| Theta | 4–8 Hz |
+| Alpha | 8–13 Hz |
+| Beta | 13–30 Hz |
+
+## Theta-Band Analysis
+
+Theta relative power was calculated for five EEG channels:
+
+| Channel | Theta Relative Power |
+|---|---:|
+| C3 | 20.59% |
+| C4 | 18.66% |
+| Fz | 20.12% |
+| Pz | 16.74% |
+| Oz | 14.82% |
+
+### Statistical Summary
+
+- Mean theta power: **18.19%**
+- Standard deviation: **2.41%**
+- Minimum: **14.82%**
+- Maximum: **20.59%**
+- Range: **5.77%**
+- Coefficient of variation: **13.23%**
+
+The highest theta relative power was observed at C3 (20.59%), while the lowest was observed at Oz (14.82%).
+
+## Results
+
+### C3 Relative Band Power
+
+![C3 Relative Band Power](C3_relative_band_power.png)
+
+### EEG Time-Frequency Analysis
+
+![C3 EEG Spectrogram](C3_EEG_spectrogram.png)
+
+### Theta Power Across EEG Channels
+
+![Theta Comparison](final_theta_comparison.png)
+
+## Python Implementation
+
+The main analysis scripts are:
+
+- `eeg_analysis.py`
+- `final_results.py`
+- `mathematical_analysis.py`
+
+## Scientific Significance
+
+This project demonstrates how mathematical and computational methods can be applied to real biological signals.
+
+It creates an interdisciplinary connection between:
+
+**Applied Mathematics → Signal Processing → Computer Science → Physics → Biology → Neuroscience**
+
+## Limitations
+
+The current analysis is exploratory and uses a limited selection of channels and recordings. The results should not be interpreted as clinical findings.
+
+## Future Work
+
+Future development may include:
+
+- analysis of multiple EEG subjects
+- event-based EEG segmentation
+- comparison of motor-imagery conditions
+- automated artifact removal
+- machine-learning classification
+- mathematical modeling of EEG wave propagation
+- comparison between theoretical biological-wave models and experimental EEG signals
+
+## Dataset Source
+
+PhysioNet — EEG Motor Movement/Imagery Dataset
+
+https://physionet.org/content/eegmmidb/1.0.0/
+
+---
+
+## Author
+
+**Darain Fatima**
+
+MPhil Mathematics — Applied Mathematics
+
+Research interests include:
+
+- Nonlinear partial differential equations
+- Mathematical modeling
+- Reaction-diffusion equations
+- Biological wave propagation
+- EEG signal analysis
+- Computational mathematics
