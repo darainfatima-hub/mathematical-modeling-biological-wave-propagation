@@ -280,6 +280,18 @@ It creates an interdisciplinary connection between:
 
 **Applied Mathematics → Signal Processing → Computer Science → Physics → Biology → Neuroscience**
 
+## Discussion
+
+The EEG analysis shows measurable differences in theta-band relative power across the selected brain regions. Among the five analyzed channels, C3 showed the highest relative theta power (20.59%), followed by Fz (20.12%) and C4 (18.66%). Pz and Oz showed lower values of 16.74% and 14.82%, respectively.
+
+The mean theta relative power across the selected channels was 18.19%, with a standard deviation of 2.41%. The coefficient of variation was 13.23%, indicating a moderate level of variation between the selected channels.
+
+The higher theta relative power observed at C3 and C4 is particularly interesting because these electrodes are located over the central regions of the brain. However, these results should not be interpreted as evidence of a specific neurological condition. The analysis is exploratory and is based on a limited number of channels and a single recording.
+
+From a mathematical and computational perspective, the analysis demonstrates how frequency-domain methods can be used to quantify characteristics of biological signals. The transformation of raw EEG measurements into band-power features provides a numerical representation that can subsequently be used for statistical analysis, mathematical modeling, or machine-learning applications.
+
+The results also provide a useful starting point for connecting mathematical models of biological wave propagation with experimentally measured EEG signals. A more extensive analysis involving multiple subjects, repeated trials, and event-specific EEG segments would be required to investigate such relationships more rigorously.
+
 ## Limitations
 
 The current analysis is exploratory and uses a limited selection of channels and recordings. The results should not be interpreted as clinical findings.
