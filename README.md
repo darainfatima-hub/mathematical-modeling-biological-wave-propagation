@@ -190,7 +190,7 @@ The present study provides a simplified one-dimensional framework for investigat
 
 ---
 
-# Project 2 — EEG Brain-Wave Analysis
+# Project 2 — Quantitative EEG Brain-Wave Analysis Using Mathematical and Computational Methods
 
 ## Overview
 
