@@ -292,6 +292,53 @@ From a mathematical and computational perspective, the analysis demonstrates how
 
 The results also provide a useful starting point for connecting mathematical models of biological wave propagation with experimentally measured EEG signals. A more extensive analysis involving multiple subjects, repeated trials, and event-specific EEG segments would be required to investigate such relationships more rigorously.
 
+## Conclusion
+
+This project demonstrated a quantitative approach to analyzing real EEG signals using Python-based signal processing and mathematical analysis. EEG recordings from the PhysioNet EEG Motor Movement/Imagery Dataset were examined in the frequency domain, with particular emphasis on theta-band activity.
+
+The analysis of five selected EEG channels showed theta relative power ranging from 14.82% to 20.59%, with a mean value of 18.19% and a standard deviation of 2.41%. C3 exhibited the highest theta relative power, while Oz exhibited the lowest among the selected channels.
+
+These results demonstrate how mathematical and computational techniques can transform raw biological signals into quantitative features that can be compared across brain regions. The project also provides a foundation for future integration of EEG signal analysis with mathematical models of biological wave propagation.
+
+Although the present analysis is exploratory and limited to selected channels and recordings, it establishes a reproducible computational framework that can be extended to larger datasets and more advanced mathematical or machine-learning methods.
+
+## References
+
+## References
+
+1. Schalk, G., McFarland, D. J., Hinterberger, T., Birbaumer, N., & Wolpaw, J. R. (2004). BCI2000: A general-purpose brain-computer interface (BCI) system. *IEEE Transactions on Biomedical Engineering, 51*(6), 1034–1043.  
+   DOI: https://doi.org/10.1109/TBME.2004.827072
+
+2. Goldberger, A. L., Amaral, L. A. N., Glass, L., Hausdorff, J. M., Ivanov, P. Ch., Mark, R. G., Mietus, J. E., Moody, G. B., Peng, C.-K., & Stanley, H. E. (2000). PhysioBank, PhysioToolkit, and PhysioNet: Components of a new research resource for complex physiologic signals. *Circulation, 101*(23), e215–e220.  
+   DOI: https://doi.org/10.1161/01.CIR.101.23.e215
+
+3. Cohen, M. X. (2014). *Analyzing Neural Time Series Data: Theory and Practice*. MIT Press.  
+   DOI: https://doi.org/10.7551/mitpress/9609.001.0001
+
+4. Schomer, D. L., & Lopes da Silva, F. H. (Eds.). (2018). *Niedermeyer's Electroencephalography: Basic Principles, Clinical Applications, and Related Fields* (7th ed.). Oxford University Press.  
+   DOI: https://doi.org/10.1093/med/9780190228484.001.0001
+
+5. PhysioNet. EEG Motor Movement/Imagery Dataset (EEGMMIDB).  
+   https://physionet.org/content/eegmmidb/1.0.0/
+
+6. MNE-Python. EEG and electrophysiological data analysis documentation.  
+   https://mne.tools/stable/
+
+## Future Work
+
+Several extensions can be developed from the present analysis:
+
+- Analysis of multiple subjects and multiple recording sessions.
+- Event-based segmentation using the T0, T1, and T2 annotations.
+- Comparison of left-fist, right-fist, and resting conditions.
+- Automated EEG artifact detection and removal.
+- Statistical testing of differences in theta power between conditions.
+- Analysis of additional frequency bands and cross-channel relationships.
+- Time-frequency analysis using wavelets or short-time Fourier transforms.
+- Machine-learning methods for EEG pattern classification.
+- Mathematical modeling of EEG-related biological wave propagation.
+- Comparison between theoretical reaction-diffusion models and experimentally observed EEG dynamics.
+
 ## Limitations
 
 The current analysis is exploratory and uses a limited selection of channels and recordings. The results should not be interpreted as clinical findings.
