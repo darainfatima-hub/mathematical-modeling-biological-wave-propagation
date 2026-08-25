@@ -1,188 +1,227 @@
-# Mathematical Modeling of Wave Propagation in Biological Systems
-A mathematical modeling study of wave propagation in biological systems using nonlinear partial differential equations
-## 1. Introduction
+# Mathematical Analysis of EEG Brain-Wave Activity
 
-Wave propagation is an important phenomenon in many biological systems, including excitable tissues and neural systems. Mathematical models based on partial differential equations provide a useful framework for studying how biological signals propagate through space and evolve over time.
+## Project Overview
 
-This project investigates wave propagation using a nonlinear reaction-diffusion partial differential equation. The aim is to develop a mathematical model, perform numerical simulations, and analyze how changes in model parameters influence wave behavior.
+This project investigates frequency characteristics of real electroencephalography (EEG) signals using mathematical and computational methods.
 
-## 2. Research Question
+The analysis combines a mathematical background with Python-based signal processing to study the distribution of EEG frequency components, with particular attention to the theta band (4–8 Hz).
 
-How can nonlinear partial differential equations be used to mathematically model and analyze wave propagation in biological systems?
+Real EEG data from the PhysioNet EEG Motor Movement/Imagery Dataset were used for the analysis.
 
-## 3. Objectives
+---
 
-The main objectives of this project are:
+## Research Objective
 
-1. To formulate a nonlinear mathematical model for biological wave propagation.
-2. To solve the model numerically.
-3. To visualize the propagation of biological waves.
-4. To investigate the influence of model parameters on wave behavior.
-5. To discuss the potential relevance of reaction-diffusion models to biological systems.
+The main objective of this project is to analyze the spectral characteristics of EEG signals and quantify the contribution of different frequency bands.
 
-## 4. Mathematical Model
+The project focuses on:
 
-To investigate biological wave propagation, this project considers the Fisher-KPP reaction-diffusion equation:
+- EEG signal preprocessing
+- Frequency-domain analysis
+- Power spectral density
+- Delta, theta, alpha, and beta band power
+- Relative frequency-band power
+- Time-frequency analysis
+- Multi-channel theta comparison
+- Statistical and mathematical analysis of EEG features
 
-$$
-\frac{\partial u}{\partial t} = D\frac{\partial^2 u}{\partial x^2}+ ru(1-u)$$
+---
 
-where:
+## Dataset
 
-- $u(x,t)$ represents the normalized biological activity or signal.
-- $D$ is the diffusion coefficient.
-- $r$ is the reaction or growth parameter.
-- $x$ represents the spatial coordinate.
-- $t$ represents time.
+The EEG recordings were obtained from the PhysioNet EEG Motor Movement/Imagery Dataset.
 
-The diffusion term describes the spatial spreading of the biological signal, while the nonlinear reaction term represents local changes in biological activity.
+Each recording contains:
 
-## 5. Model Assumptions
+- 64 EEG channels
+- Sampling frequency of 160 Hz
+- EEG recordings in EDF+ format
+- Event annotations
 
-The model assumes that:
+Dataset:
 
-1. The biological activity varies continuously in space and time.
-2. Spatial propagation can be represented by a diffusion process.
-3. Local biological dynamics are represented by a nonlinear reaction term.
-4. The model parameters are constant during the simulation.
+https://physionet.org/content/eegmmidb/1.0.0/
 
-## 6. Preliminary Results
+---
 
-An initial Gaussian-profile simulation was performed as a preliminary test of biological wave propagation. The solution remained centered around x = 20 throughout the simulated time interval.
+## Tools and Technologies
 
-The peak-position analysis gave an estimated propagation speed of 0.0000 spatial units per time unit. This indicated that the Gaussian pulse did not exhibit translational motion of its maximum and therefore was not suitable for estimating traveling-wave speed using the peak-position method.
+The project was developed using:
 
-This preliminary result motivated the use of a sigmoid traveling-front profile for the subsequent propagation analysis.
-![Initial Gaussian simulation](initial_gaussian_simulation.png)
+- Python
+- NumPy
+- Matplotlib
+- MNE-Python
+- Fast Fourier Transform (FFT)
+- Welch Power Spectral Density estimation
+- Statistical analysis
 
-**Figure 1.** Preliminary Gaussian-profile simulation at different time points.
+---
 
-## 7. Final Traveling-Wave Results
+## Methodology
 
-A sigmoid traveling-front profile was used to investigate the propagation of biological activity through the spatial domain. The wave front was tracked by identifying the position at which the solution satisfies $u = 0.5$ at each selected time point.
+### 1. EEG Data Loading
 
-The numerical simulation showed a clear forward movement of the traveling front. The front position increased from x = 20.00 at t = 0 to x = 68.80 at t = 20.
+The EEG recording was loaded using MNE-Python.
 
-A linear fit of the front position as a function of time gave an estimated propagation speed of:
+The C3 EEG channel was selected for detailed analysis.
 
-$$
-c = 2.4564
-$$
+### 2. Signal Filtering
 
-spatial units per time unit.
+A 1–40 Hz band-pass filter was applied to reduce very-low-frequency drift and high-frequency noise.
 
-These results demonstrate the propagation of the modeled traveling front and provide a quantitative estimate of its propagation speed.
+### 3. Frequency-Domain Analysis
 
-### Traveling-Front Simulation
+Fast Fourier Transform (FFT) was used to investigate the frequency components of the EEG signal.
 
-![Final traveling-wave simulation](travelling_wave.png)
+### 4. EEG Band-Power Analysis
 
-**Figure 2.** Numerical simulation of the sigmoid traveling front at different time points.
+Power was calculated for four conventional frequency bands:
 
+| Band | Frequency Range |
+|---|---|
+| Delta | 1–4 Hz |
+| Theta | 4–8 Hz |
+| Alpha | 8–13 Hz |
+| Beta | 13–30 Hz |
 
+### 5. Relative Band Power
 
+Relative power was calculated as:
 
-## 8. Quantitative Analysis
+Relative Power = Band Power / Total Power × 100
 
-The position of the traveling wave front was estimated by tracking the spatial location where the solution satisfies $u = 0.5$.
+This allowed comparison of the contribution of each frequency band.
 
-The simulated front positions were:
+### 6. Time-Frequency Analysis
 
-| Time | Front Position |
-|------|----------------|
-| 0 | 20.00 |
-| 2 | 24.40 |
-| 4 | 29.20 |
-| 6 | 34.00 |
-| 8 | 39.00 |
-| 10 | 44.00 |
-| 12 | 49.00 |
-| 14 | 54.00 |
-| 16 | 58.80 |
-| 18 | 63.80 |
-| 20 | 68.80 |
+A spectrogram was generated to examine how the frequency content of the EEG signal changes over time.
 
-A linear fit of front position against time gave an estimated propagation speed of:
+### 7. Multi-Channel Analysis
 
-**Estimated Propagation Speed:** `c = 2.4564` spatial units per time unit.
-The increasing front position demonstrates that the modeled biological activity propagates through the spatial domain over time.
-## 9. Parameter Analysis
+Theta-band relative power was compared across five EEG channels:
 
-To investigate how diffusion influences biological wave propagation, simulations were performed using three different values of the diffusion coefficient $D$, while keeping the reaction parameter fixed at $r = 1.0$.
+- C3
+- C4
+- Fz
+- Pz
+- Oz
 
-The estimated propagation speeds were:
+### 8. Mathematical Analysis
 
-| Diffusion Coefficient $D$ | Propagation Speed |
-|----------------------------|-------------------|
-| 0.5 | 2.2291 |
-| 1.0 | 2.4564 |
-| 2.0 | 2.9000 |
+Mean, standard deviation, range, and coefficient of variation were calculated to quantify the spatial variation of theta-band activity.
 
-The results show that the propagation speed increases as the diffusion coefficient increases. In the simulated system, stronger diffusion leads to faster spatial propagation of the traveling front.
+---
 
-### Effect of Diffusion on Propagation Speed
+## Results
 
-![Effect of diffusion coefficient on wave propagation](diffusion_parameter_analysis.png)
-**Figure 3.** Relationship between the diffusion coefficient and the estimated propagation speed.
-## 10. Discussion
+### C3 Frequency-Band Analysis
 
-The numerical simulations demonstrate that the mathematical formulation can produce a propagating biological activity profile. The preliminary Gaussian simulation showed that the maximum of the solution remained approximately fixed at $x = 20$, resulting in a peak-based propagation speed of zero. This indicated that the Gaussian profile was not appropriate for estimating the speed of a traveling front using the peak-position method.
+The relative power obtained from the C3 channel was:
 
-A sigmoid traveling-front profile was therefore considered for the subsequent analysis. In this case, the position of the $u = 0.5$ level was used to track the wave front. The front moved from $x = 20.00$ at $t = 0$ to $x = 68.80$ at $t = 20$, giving an estimated propagation speed of $2.4564$ spatial units per time unit.
+| Frequency Band | Relative Power |
+|---|---:|
+| Delta | 52.25% |
+| Theta | 20.59% |
+| Alpha | 13.66% |
+| Beta | 13.50% |
 
-The parameter analysis further showed that diffusion has a significant influence on the simulated propagation speed. Increasing the diffusion coefficient from $D = 0.5$ to $D = 2.0$ increased the estimated propagation speed from $2.2291$ to $2.9000$ spatial units per time unit. This behavior is consistent with the role of diffusion in transporting activity through the spatial domain.
+The theta band accounted for **20.59%** of the combined power of the analyzed frequency bands in the C3 channel.
 
-The results demonstrate how nonlinear reaction-diffusion equations can be used as computational tools for studying propagation phenomena in biological systems. However, the present model is a simplified one-dimensional representation and does not capture the full complexity of real biological systems. More realistic models could incorporate additional variables, spatial dimensions, heterogeneous parameters, and experimentally measured biological data.
-## 11. Conclusion
+### Multi-Channel Theta Analysis
 
-This project investigated the mathematical modeling of biological wave propagation using the Fisher-KPP nonlinear reaction-diffusion equation.
+| EEG Channel | Theta Relative Power |
+|---|---:|
+| C3 | 20.59% |
+| C4 | 18.66% |
+| Fz | 20.12% |
+| Pz | 16.74% |
+| Oz | 14.82% |
 
-A preliminary Gaussian-profile simulation was first examined. Since the maximum of the solution remained approximately fixed in space, its peak-based propagation speed was estimated as zero. This motivated the use of a sigmoid traveling-front profile for the subsequent analysis.
+Theta relative power ranged from **14.82% to 20.59%** across the five analyzed channels.
 
-The traveling-front simulation demonstrated clear spatial propagation, with the front position increasing from $x = 20.00$ at $t = 0$ to $x = 68.80$ at $t = 20$. The estimated propagation speed was $2.4564$ spatial units per time unit.
+### Mathematical Results
 
-Parameter analysis showed that increasing the diffusion coefficient resulted in increased propagation speed. The estimated speeds were $2.2291$, $2.4564$, and $2.9000$ for $D = 0.5$, $1.0$, and $2.0$, respectively.
+| Measure | Value |
+|---|---:|
+| Mean theta power | 18.19% |
+| Standard deviation | 2.41% |
+| Minimum | 14.82% |
+| Maximum | 20.59% |
+| Range | 5.77% |
+| Coefficient of variation | 13.23% |
 
-Overall, the project demonstrates how nonlinear partial differential equations, numerical methods, and computational analysis can be combined to investigate wave propagation phenomena in biological systems. The model provides a simplified mathematical framework that can be further extended toward more realistic biological applications.
-## 12. Tools and Technologies
+C3 showed the highest observed theta relative power, while Oz showed the lowest among the five selected channels.
 
-The project was developed using the following computational tools:
+---
 
-- **Python** — numerical simulation and computational analysis
-- **NumPy** — numerical calculations and array-based computation
-- **Matplotlib** — visualization of wave profiles and parameter-analysis results
-- **GitHub** — project documentation, version control, and reproducibility
+## Figures
 
-## 13. Project Structure
+### Relative EEG Band Power
 
-The repository contains the following main files:
+`C3_relative_band_power.png`
 
-- `simulation.py` — numerical simulation of the Fisher-KPP traveling-wave model
-- `parameter_analysis.py` — analysis of the effect of the diffusion coefficient on propagation speed
-- `initial_gaussian_simulation.png` — preliminary Gaussian-profile simulation
-- `travelling_wave.png` — final traveling-front simulation
-- `diffusion_parameter_analysis.png` — diffusion coefficient versus propagation speed
-- `README.md` — mathematical model, methodology, results, discussion, and conclusions
-## 14. References
+### Time-Frequency Analysis
 
-1. Fisher, R. A. (1937). The wave of advance of advantageous genes. *Annals of Eugenics*, 7(4), 355–369.
-2. Kolmogorov, A., Petrovskii, I., & Piskunov, N. (1937). Étude de l'équation de la diffusion avec croissance de la quantité de matière et son application à un problème biologique. *Bulletin de l'Université d'État de Moscou, Série Internationale A*, 1, 1–25.
-3. Murray, J. D. (2002). *Mathematical Biology I: An Introduction* (3rd ed.). Springer. https://doi.org/10.1007/b98868
+`C3_EEG_spectrogram.png`
 
-4. Murray, J. D. (2003). *Mathematical Biology II: Spatial Models and Biomedical Applications* (3rd ed.). Springer. https://doi.org/10.1007/b98869
+### Multi-Channel Theta Comparison
 
-## 15. Future Work
+`final_theta_comparison.png`
 
-The present study provides a simplified one-dimensional framework for investigating biological wave propagation. Several extensions can be considered for future research:
+---
 
-1. **Higher-dimensional modeling:** Extend the one-dimensional reaction-diffusion model to two- and three-dimensional spatial domains.
+## Interpretation
 
-2. **Parameter sensitivity analysis:** Investigate the sensitivity of wave speed and wave structure to the diffusion coefficient, reaction parameter, and other model parameters.
+The analysis demonstrates that EEG signals contain measurable contributions from multiple frequency bands.
 
-3. **Heterogeneous biological media:** Introduce spatially varying diffusion and reaction parameters to represent heterogeneous biological environments.
+The theta-band contribution varied across the selected EEG channels, with the highest observed value at C3 and the lowest at Oz.
 
-4. **Comparison with biological data:** Compare numerical wave profiles with experimentally measured biological or neural signals where suitable datasets are available.
+The calculated mean and standard deviation provide a simple mathematical description of the variation in theta-band relative power across the selected electrode locations.
 
-5. **More complex biological models:** Extend the framework toward coupled reaction-diffusion systems and more realistic models of biological signal propagation.
+These findings demonstrate how mathematical and computational methods can be applied to extract quantitative features from biological signals.
 
-6. **Application to neural wave propagation:** Explore whether reaction-diffusion and traveling-wave models can be adapted to investigate wave-like activity in neural systems.
+---
+
+## Limitations
+
+This project is an exploratory analysis based on a single EEG recording and five selected channels.
+
+Therefore, the results should not be interpreted as clinical findings or generalized to a wider population.
+
+Further analysis using multiple subjects, multiple recordings, and task-specific event segments would be required for broader conclusions.
+
+---
+
+## Future Work
+
+Possible extensions include:
+
+- Analysis of multiple subjects
+- Automated EEG artifact removal
+- Comparison of resting and motor-imagery periods
+- Analysis of additional EEG channels
+- Statistical comparison between experimental conditions
+- Machine-learning-based EEG classification
+- Mathematical modeling of brain-wave propagation
+- Comparison of experimental EEG characteristics with mathematical models
+
+---
+
+## Project Significance
+
+This project demonstrates the application of mathematical analysis, numerical methods, and Python-based computational tools to real biological data.
+
+It provides an interdisciplinary connection between:
+
+**Mathematics + Computer Science + Neuroscience + Biological Signal Processing**
+
+---
+
+## Author
+
+Darain Fatima
+
+MPhil Mathematics — Applied Mathematics
+
+Research interests include nonlinear partial differential equations, mathematical modeling, symmetry analysis, and computational approaches to biological systems.
