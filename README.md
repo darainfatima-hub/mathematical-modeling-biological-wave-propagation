@@ -304,8 +304,6 @@ Although the present analysis is exploratory and limited to selected channels an
 
 ## References
 
-## References
-
 1. Schalk, G., McFarland, D. J., Hinterberger, T., Birbaumer, N., & Wolpaw, J. R. (2004). BCI2000: A general-purpose brain-computer interface (BCI) system. *IEEE Transactions on Biomedical Engineering, 51*(6), 1034–1043.  
    DOI: https://doi.org/10.1109/TBME.2004.827072
 
